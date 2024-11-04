@@ -16,7 +16,7 @@ async function addUser(req, res) {
     const { username } = req.params;
 
     if (!username) {
-        return res.status(400).json({ error: "Campos obrigatório, por favor preencha o campo usuario!" });
+        return res.status(400).json({ error: "Campo obrigatório, por favor preencha o campo usuario!" });
     }
 
     try {
@@ -48,7 +48,7 @@ function removeUser(req, res) {
     }
 }
 
-// Função para alternar a estrela de um usuário
+
 function toggleStar(req, res) {
     const { username } = req.params;
 
