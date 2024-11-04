@@ -22,6 +22,7 @@ function addUser(user) {
 
 function removeUser(username) {
     favoriteUsers = favoriteUsers.filter(user => user.username !== username);
+    
 }
 
 function toggleStar(username) {

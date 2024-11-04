@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-gray-100 flex flex-col items-center py-8">
     <h1 class="text-2xl font-bold mb-4">Favoritos do GitHub</h1>
     
-    <!-- Input para adicionar usuário -->
+    
     <div class="flex mb-6">
       <input 
         v-model="username" 
@@ -17,14 +17,14 @@
       </button>
     </div>
 
-    <!-- Botão para ordenar a lista alfabeticamente -->
+    
     <button 
       @click="toggleOrder"
       class="mb-4 px-4 py-2 bg-gray-800 text-white font-semibold rounded hover:bg-gray-900">
       {{ isAlphabetical ? "Ordem Aleatória" : "Ordem Alfabética" }}
     </button>
 
-    <!-- Lista de Usuários Favoritos -->
+    
     <UserList 
       :users="displayedUsers" 
       @remove="removeUser" 

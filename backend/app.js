@@ -5,9 +5,9 @@ const cors = require('cors')
 const app = express();
 const PORT = 3000;
 app.use(cors({
-    origin: 'http://localhost:5173', // Permite apenas esta origem
-    methods: ['GET', 'POST', 'PATCH', 'DELETE'], // Métodos permitidos
-    allowedHeaders: ['Content-Type'], // Cabeçalhos permitidos
+    origin: 'http://localhost:5173', 
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    allowedHeaders: ['Content-Type'], 
 }));
 app.use(express.json());
 app.use('/favoriteUser', userRoutes);

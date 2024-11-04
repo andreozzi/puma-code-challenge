@@ -20,6 +20,9 @@ async function addUser(req, res) {
     }
 
     try {
+
+        const listaUsers = userRepository.getUsers(); 
+        
         const response = await axios.get(`https://api.github.com/users/${username}`);
         const { login, name, avatar_url, html_url } = response.data;
 
@@ -31,20 +34,30 @@ async function addUser(req, res) {
         if (error.response && error.response.status === 404) {
             res.status(404).json({ error: "Usuário não encontrado no GitHub." });
         } else {
-            res.status(500).json({ error: "Erro ao adicionar usuário." });
+            res.status(500).json({ error: "Usuário ja foi inserido na lista. Digite um usuario diferente" });
         }
     }
 }
+
 
 
 function removeUser(req, res) {
     const { username } = req.params;
 
     try {
+        const favoriteUsers = userRepository.getUsers(); 
+
+        
+        const userExists = favoriteUsers.some(user => user.username === username);
+        
+        if (!userExists) {
+            return res.status(404).json({ error: "Usuário não encontrado na lista de favoritos." });
+        }
+
         userRepository.removeUser(username);
-        res.json({ message: "Usuário removido dos favoritos." });
+        return res.json({ message: "Usuário removido dos favoritos." });
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        return res.status(500).json({ error: error.message });
     }
 }
 
