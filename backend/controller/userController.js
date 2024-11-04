@@ -26,7 +26,7 @@ async function addUser(req, res) {
         const user = {username: login, nome: name, avatar: avatar_url, url: html_url}
         userRepository.addUser(user);
         console.log(`O usuario ${user.username} foi adicionado a lista`)
-        res.status(201).json({ message: "Usuário adicionado aos favoritos." });
+        res.status(201).json(user);
     } catch (error) {
         if (error.response && error.response.status === 404) {
             res.status(404).json({ error: "Usuário não encontrado no GitHub." });

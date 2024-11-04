@@ -68,7 +68,7 @@ export default {
 
       try {
         const response = await axios.post(`/favoriteUser/${this.username}`, { username: this.username });
-        this.users.push(response.data.user);
+        this.users.push(response.data);
         this.username = '';
       } catch (error) {
         if (error.response && error.response.data) {
