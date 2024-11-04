@@ -81,7 +81,7 @@ npm install axios express cors
 
 ```
 
-npm run serve
+npm run dev
 
 ```
 
