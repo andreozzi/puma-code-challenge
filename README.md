@@ -92,6 +92,7 @@ npm run serve
 ```
 
 npm install axios express cors jest
+npm install npm-run-all --save-dev
 
 ```
 
