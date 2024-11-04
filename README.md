@@ -72,7 +72,7 @@ npm start
 2. Instale as dependencias:
 
 ```
-
+npm install -g @vue/cli
 npm install axios express cors
 
 ```
@@ -91,8 +91,7 @@ npm run dev
 
 ```
 
-npm install axios express cors jest
-npm install npm-run-all --save-dev
+npm install -g @vue/cli axios express cors jest npm-run-all --save-dev
 
 ```
 
